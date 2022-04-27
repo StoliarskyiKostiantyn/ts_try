@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import api from "../../../services/fetchMovies";
-import { Link, useParams, useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 interface FilmData {
   name: string;

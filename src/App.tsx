@@ -25,12 +25,24 @@ const NotFound = lazy(
       "./components/Pages/NotFound/NotFound" /* webpackChunkName: "NotFound" */
     )
 );
-// const MovieDetailsPage = lazy(
-//   () =>
-//     import(
-//       "./components/Pages/MoviesPage/MovieDetailsPage/MovieDetailsPage" /* webpackChunkName: "MovieDetailsPage" */
-//     )
-// );
+const MovieDetailsPage = lazy(
+  () =>
+    import(
+      "./components/Pages/MoviesPage/MovieDetailsPage/MovieDetailsPage" /* webpackChunkName: "MovieDetailsPage" */
+    )
+);
+const Cast = lazy(
+  () =>
+    import(
+      "./components/Pages/MoviesPage/Cast/Cast" /* webpackChunkName: "Cast" */
+    )
+);
+const Review = lazy(
+  () =>
+    import(
+      "./components/Pages/MoviesPage/Review/Review" /* webpackChunkName: "Review" */
+    )
+);
 function App() {
   return (
     <Suspense fallback={<h1>LOADING....</h1>}>
@@ -42,6 +54,7 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/movies" element={<MoviesPage />} />
+          <Route path="/movies/:filmId" element={<MovieDetailsPage />} />
           <Route element={<NotFound />} />
         </Routes>
       </div>

@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { MovieFormRef } from "../../types/movie";
 
 interface Props {
   onSubmit: (title: string) => void;
@@ -10,6 +9,7 @@ export default function SearchForm({ onSubmit }: Props) {
   const handleSubmit: React.FormEventHandler<HTMLFormElement> = (e) => {
     e.preventDefault();
     onSubmit(filmName);
+    setFilmName("");
   };
 
   return (
